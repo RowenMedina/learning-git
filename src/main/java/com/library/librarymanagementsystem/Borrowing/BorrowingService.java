@@ -2,6 +2,8 @@ package com.library.librarymanagementsystem.Borrowing;
 
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.library.librarymanagementsystem.Member.MemberEntity;
 import com.library.librarymanagementsystem.Member.MemberRepository;
 import com.library.librarymanagementsystem.book.BookEntity;
+import com.library.librarymanagementsystem.book.BookMapper;
 import com.library.librarymanagementsystem.book.BookRepository;
 
 import jakarta.transaction.Transactional;
@@ -25,6 +28,8 @@ public class BorrowingService {
 	      final private BookRepository bookrepo;
 	      final private MemberRepository memberrepo;
 	      final private BorrowingRepository borrowingrepo;
+	      
+	      
 	      
 	      
 	      
@@ -44,7 +49,7 @@ public class BorrowingService {
 		                "Book not found: " ) );
 	    	 
 	    	  
-	    	  
+	    	   
 	    	                
 	    	  
 	    	  
@@ -158,7 +163,7 @@ public class BorrowingService {
 	    		      
 	    		      
 	    		      
-	    		       
+	    		        
 	    		     
 	    		      
 	    		    
@@ -172,13 +177,26 @@ public class BorrowingService {
 	    		    return BorrowingMapper.maptoDto(saved);
 	    	
 	    		    
-	    		   
+	    		  
 	      
 	      
 	      }
 	    	  
-	      
-	                 
+	        
+	                   public List <BorrowingDto> getAllborrowing () {
+	                	   
+	                	   
+	                	
+	                	   
+	                	
+	                	//return repo.findAll().stream().map(BookMapper:: mapToBookDto ).collect(Collectors.toList());	   
+	                	   
+	                	   return  borrowingrepo.findAll().stream().map(BorrowingMapper:: maptoDto ).collect(Collectors.toList());
+	                	   
+	                	   
+	                	   
+	                	   
+	                   }
 	               
 	    
 	      
