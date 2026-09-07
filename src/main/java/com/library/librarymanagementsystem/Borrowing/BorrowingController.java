@@ -39,15 +39,13 @@ public class BorrowingController {
 	 public ResponseEntity<BorrowingDto> returnthebook ( @PathVariable("id") Integer id) {
 	
 	    	
-	    	 
-	      
 	    	
 		 
 		 
 		  var returnbybook =      service.returnthebook(id);
 		 
 		 
-		 
+		  
 		  
 		 return ResponseEntity.ok( returnbybook);
 		 

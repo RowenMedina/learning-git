@@ -78,7 +78,7 @@ public class BookController {
 		  
 		return ResponseEntity.ok(findAll);
 		 
-		
+	  
 		
 		
 	}
@@ -89,9 +89,7 @@ public class BookController {
 		@PutMapping("/{Id}")
 		public ResponseEntity<BookDto> UpdateByBook ( @PathVariable ("Id")Integer id , @RequestBody BookDto updateDto) {
 			 
-			
-			
-			BookDto updateBybook = service.UpdateByBook(id, updateDto);
+			 var updateBybook = service.UpdateByBook(id, updateDto);
 			 
 			 return ResponseEntity.ok(updateBybook);
 		}
