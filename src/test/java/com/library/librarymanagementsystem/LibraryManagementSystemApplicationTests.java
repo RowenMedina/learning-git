@@ -9,16 +9,16 @@ class LibraryManagementSystemApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-<<<<<<< HEAD
+
 
  // GIT HIHIIH
 	
-=======
+
                
 	
 	  /// GIT WITH ME
 	
 	
 	 
->>>>>>> 8f56c9d (testingGIT)
+
 }
