@@ -22,18 +22,16 @@ public class BookMapper {
 	
 	 }
 
-    public static BookEntity maptoBook(BookDto bookDto) {
+	 public static BookEntity maptoBook(BookDto bookDto) {
+		    return BookEntity.builder()
+		            .id(bookDto.id())
+		            .title(bookDto.title())
+		            .author(bookDto.author())
+		            .isbn(bookDto.isbn())
+		            .available(bookDto.available())
+		            .borrowings(new ArrayList<>())
+		   
+		            .build();
 	
-    	   
-    	
-    	
-    	
-    	return new BookEntity (bookDto.id() , bookDto.title() , bookDto.author() , bookDto.isbn() , bookDto.available() , new ArrayList<>()) ;
-    	
-    	
-    	
-    	
-    	
-    }
-
+	 }
 }

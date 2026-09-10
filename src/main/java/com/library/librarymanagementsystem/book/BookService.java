@@ -26,4 +26,8 @@ public interface BookService {
 	
 		void DeleteBybook(Integer id);
 	
+		
+		
+		
+		BookDto findbyCategory (Category category);
 }

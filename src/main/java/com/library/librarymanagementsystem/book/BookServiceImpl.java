@@ -68,6 +68,8 @@ public class BookServiceImpl implements BookService  {
 	        );
 		
 		 return BookMapper.mapToBookDto(findbyTitle);
+		 
+		 
 		
 	}
 
@@ -141,6 +143,30 @@ public class BookServiceImpl implements BookService  {
 		   
 		
 	}
+
+
+
+         
+
+	@Override
+	public List<BookDto> findbyCategory(Category category) {
+	
+		 
+		 
+		  
+		
+		
+   return repo.findByCategory(category)
+	            .stream()
+	            .map(BookMapper::mapToBookDto)
+	            .toList();
+
+	
+	 
+	        
+	}
+	
+	
                
 	    
 	
