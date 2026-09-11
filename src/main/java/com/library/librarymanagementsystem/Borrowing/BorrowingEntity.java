@@ -50,6 +50,7 @@ public class BorrowingEntity {
 	@JoinColumn(name = "book_id")
 	private BookEntity book;
 	    
+	     
 	
 	
 	

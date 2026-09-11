@@ -13,7 +13,7 @@ public interface BookService {
 	 
 
 
-	  BookDto FindBookBytitle(String title);
+	 List< BookDto> FindBookBytitle(String title);
 	 
 	
 	List<BookDto> FindByAll ();
@@ -29,5 +29,5 @@ public interface BookService {
 		
 		
 		
-		BookDto findbyCategory (Category category);
+		List<BookDto> findbyCategory (Category category);
 }

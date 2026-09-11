@@ -2,7 +2,7 @@ package com.library.librarymanagementsystem.book;
 
 import java.util.ArrayList;
 
-import com.library.librarymanagementsystem.Borrowing.BorrowingEntity;
+
 
 public class BookMapper {
  
@@ -13,10 +13,10 @@ public class BookMapper {
 		 
 		 
 		 
-		 return new BookDto(entity.getId() , entity.getTitle() , entity.getAuthor() , entity.getIsbn() , entity.isAvailable()  );
+		 return new BookDto(entity.getId() , entity.getTitle() , entity.getAuthor() , entity.getIsbn() , entity.isAvailable() , entity.getCategory() );
 		 
 		         
-		                
+		             
 		            
 		 
 	
@@ -30,7 +30,9 @@ public class BookMapper {
 		            .isbn(bookDto.isbn())
 		            .available(bookDto.available())
 		            .borrowings(new ArrayList<>())
-		   
+		            .category(bookDto.category())
+		            
+		  
 		            .build();
 	
 	 }
