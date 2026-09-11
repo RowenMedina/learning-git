@@ -34,7 +34,7 @@ public class BookServiceImpl implements BookService  {
 		   
 		return BookMapper.mapToBookDto(save);
 
-	
+
 	
 	
 	}
@@ -56,18 +56,19 @@ public class BookServiceImpl implements BookService  {
       
 	  
 	@Override
-	public BookDto FindBookBytitle(String title) {
+	public List<BookDto> FindBookBytitle(String title) {
 	
 		
+		
 	
 		
-		 BookEntity findbyTitle = repo.findByTitleContaining(title).orElseThrow(() -> new ResponseStatusException(
-	                HttpStatus.NOT_FOUND,
-	                "Book not found: " + title
-	            )
-	        );
-		
-		 return BookMapper.mapToBookDto(findbyTitle);
+		  return repo.findByTitleContaining(title)
+		            .stream()
+		            .map(BookMapper::mapToBookDto)
+		            .toList();
+		 
+		 
+		 
 		
 	}
 
@@ -141,6 +142,30 @@ public class BookServiceImpl implements BookService  {
 		   
 		
 	}
+
+
+
+         
+
+	@Override
+	public List<BookDto> findbyCategory(Category category) {
+	
+		 
+		
+		
+   return repo.findByCategory(category)
+	            .stream()
+	            .map(BookMapper::mapToBookDto)
+	            .toList();
+
+	
+           
+                     
+	 
+	        
+	}
+	
+	
                
 	    
 	

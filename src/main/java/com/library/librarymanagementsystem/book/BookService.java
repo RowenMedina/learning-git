@@ -13,7 +13,7 @@ public interface BookService {
 	 
 
 
-	  BookDto FindBookBytitle(String title);
+	 List< BookDto> FindBookBytitle(String title);
 	 
 	
 	List<BookDto> FindByAll ();
@@ -26,4 +26,8 @@ public interface BookService {
 	
 		void DeleteBybook(Integer id);
 	
+		
+		
+		
+		List<BookDto> findbyCategory (Category category);
 }

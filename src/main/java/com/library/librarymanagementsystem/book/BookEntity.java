@@ -2,9 +2,12 @@ package com.library.librarymanagementsystem.book;
 
 import java.util.List;
 
+
 import com.library.librarymanagementsystem.Borrowing.BorrowingEntity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,6 +18,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+
 
 
 
@@ -45,15 +50,29 @@ public class BookEntity {
 	
 	private boolean available;
 	
+	     
 	
-	
-	 
-	@OneToMany(mappedBy = "book")
+	       @OneToMany(mappedBy = "book")
 	 private List<BorrowingEntity> borrowings;
+
+	                        
+	       
+	   
+	
+	
+	
+	@Enumerated(EnumType.STRING)
+    private Category category;
+	
+	                                         
+	    
+
+	
+		}
 	  
 	
                
 	
 	
 	
-}
+

@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
+
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
@@ -34,6 +37,7 @@ public class BookController {
 		 return new ResponseEntity<>(save , HttpStatus.CREATED);
 		  
 		    
+		    
 		 
 		 
 		
@@ -51,15 +55,14 @@ public class BookController {
 
 	
 	@GetMapping("/Title/{title}")
-  public ResponseEntity<BookDto> findByTitle(@PathVariable("title") String title) {
+  public ResponseEntity<List<BookDto>> findByTitle(@PathVariable("title") String title) {
 	
 		
 		
 		var findBytitle = service.FindBookBytitle(title);
 		
 		
-		     
-		              
+                                        		              
 		  
 		
 		return  ResponseEntity.ok(findBytitle);
@@ -83,6 +86,7 @@ public class BookController {
 		
 	}
 	     
+		
 		 
 		
 		 
@@ -107,5 +111,29 @@ public class BookController {
 			   
 			 
 		 }
+		 
+		   
+		 
+		 
+		 @GetMapping("/category/{category}")
+		   public ResponseEntity<List<BookDto>> findByCategory ( @PathVariable Category category) {
+			
+			   
+			var categories =  service.findbyCategory(category);
+			   
+			   
+			   return ResponseEntity.ok(categories) ;
+					
+			   
+		   }
+		       // @GetMapping("/categories")
+		// public Category[] getCategories() {
+		//	    return Category.values();
+			//}
+		 
+		 
+		 
+		 
+		 
 
 }
